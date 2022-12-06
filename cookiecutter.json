@@ -1,0 +1,23 @@
+{
+  "author_name": "Angel Martinez-Tenor",
+  "author_email": "angelmtenor@gmail.com",
+  "package_name": "my_pkg",
+  "__package_slug": "{{ cookiecutter.package_name|lower|replace(' ', '_')|replace('-', '_') }}",
+  "package_short_description": "A Data Science Package",
+  "package_version": "0.1.0",
+  "python_version": "3.10",
+  "open_source_license": [
+    "MIT",
+    "Apache License 2.0",
+    "GNU General Public License v3.0",
+    "CC0 v1.0 Universal",
+    "BSD 3-Clause",
+    "Proprietary",
+    "None"
+  ],
+  "include_github_actions": [
+    "no",
+    "ci",
+    "ci+cd"
+  ]
+}

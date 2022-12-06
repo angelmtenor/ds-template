@@ -1,0 +1,10 @@
+{
+    "name": "DS Ubuntu 22",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "extensions": [
+        "ms-python.python"
+    ],
+    "remoteUser": "user"
+}
