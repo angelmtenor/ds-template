@@ -1,4 +1,4 @@
-install:
+setup:
 	@echo "Installing Environment"
 	poetry install --all-extras
 
