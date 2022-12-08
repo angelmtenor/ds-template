@@ -11,7 +11,7 @@ ENV PATH /opt/conda/bin:$PATH
 
 RUN apt-get update --fix-missing -y && apt-get upgrade -y \
   && apt-get install -y --no-install-recommends git make curl wget bzip2 ca-certificates libglib2.0-0 libxext6 \
-  libsm6 libxrender1 mercurial subversion nano htop
+  libsm6 libxrender1 mercurial subversion nano htop unzip
 
 # # INSTALL MINICONDA (root)
 # RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
@@ -73,12 +73,9 @@ RUN source ~/.bashrc
 # Create a Customized conda dev environment with cookiecutter and ipykernel  (last step to avoid env conflicts):
 #  Do not use ENV PATH=~/miniconda3/bin:$PATH for conda before another block of commands
 ENV PATH=~/miniconda3/bin:$PATH
-RUN conda update --all -y
-RUN conda create -n dev python=3.10
-RUN conda init bash
-RUN echo "conda activate dev" >> ~/.bashrc
-RUN source activate dev
-RUN conda install -y -c conda-forge 'cookiecutter>=2' ipykernel
+RUN conda update --all -y && conda create -n dev python=3.10 -y && conda init bash && \
+  echo "conda activate dev" >> ~/.bashrc && source activate dev && \
+  conda install -y -c conda-forge 'cookiecutter>=2' ipykernel
 
 # Entrypoint - BASH
 CMD [ "/usr/bin/bash"]
