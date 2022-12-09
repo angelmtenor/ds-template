@@ -4,8 +4,7 @@
 # Instructions: https://pre-commit.com/
 # Manual QA: 'pre-commit run --all-files'
 # Update all versions: 'pre-commit autoupdate'
-# Advanced QA (no pre-commit): pylint src --max-line-length 120
-# Also: pylint $(git ls-files '*.py') --max-line-length 120
+# Advanced QA: pylint src --max-line-length 120. Also: pylint $(git ls-files '*.py') --max-line-length 120
 
 # Credits:
 # Adapted from Angel Martinez-Tenor personal repo:
