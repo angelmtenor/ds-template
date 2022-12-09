@@ -1,6 +1,7 @@
 setup:
 	@echo "Installing Environment"
 	poetry install --all-extras
+	mypy --install-types --non-interactive
 
 qa:
 	@echo "Running QA"

@@ -15,9 +15,13 @@ repos:
     rev: v4.4.0
     hooks:
     - id: trailing-whitespace
+      exclude: ^data/
     - id: mixed-line-ending
+      exclude: ^data/
     - id: end-of-file-fixer
+      exclude: ^data/
     - id: requirements-txt-fixer
+    - id: check-toml
     - id: check-yaml
     - id: check-json
     - id: pretty-format-json
@@ -46,6 +50,8 @@ repos:
     entry: pyupgrade
     language: system
     args: [--py38-plus]
+    types: [python]
+
 
 # - repo: https://github.com/pycqa/isort
 #   rev: 5.10.1
@@ -54,8 +60,9 @@ repos:
     name: isort (python)
     entry: isort
     language: system
+    types: [python]
+
     # stages: [commit]
-    # types: [python]
 
 # - repo: https://github.com/pycqa/flake8
 #   rev: 6.0.0
@@ -77,7 +84,7 @@ repos:
     entry: mypy
     language: system
     # verbose: true
-    args: [--show-error-codes, --no-strict-optional, --ignore-missing-imports]
+    args: [--no-strict-optional, --ignore-missing-imports]
     types: [python]
 
     # additional_dependencies: [tokenize-rt==3.2.0, types-PyYAML]
@@ -90,8 +97,8 @@ repos:
     # entry: pylint $(git ls-files '*.py')
     language: system
     types: [python]
-    args:
-    - --max-line-length=120
+    args: [--max-line-length=120,  --disable=E1101, --disable=W0511, --disable=C0103, --disable=C0302,
+         --disable=R0912, --disable=R0913, --disable=R0914]
 #         # - --ignore-imports=yes
 #         # - -d duplicate-code
 
@@ -120,14 +127,15 @@ repos:
     #   args: [--max-line-length=120]
     # args: [--nbqa-mutate]
 
-- repo: local
-  hooks:
-  - id: jupyter-nb-clear-output # Note: jupyter_contrib_nbextensions needed
-    name: jupyter-nb-clear-output
-    files: \.ipynb$
-    entry: jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace
-    language: system
-    exclude: ^notebooks/execution_caller.ipynb
+# REMOVE OUTPUT CELLS FROM NOTEBOOKS
+# - repo: local
+#   hooks:
+#   - id: jupyter-nb-clear-output # Note: jupyter_contrib_nbextensions needed
+#     name: jupyter-nb-clear-output
+#     files: \.ipynb$
+#     entry: jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace
+#     language: system
+#     exclude: ^notebooks/execution_caller.ipynb
 
 
 # Check cyclical dependencies:
