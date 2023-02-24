@@ -28,7 +28,7 @@ $ conda create -n dev python=3.10 -y && conda activate dev
 **Step 2**. Install all the Dependencies and the package in editor mode:
 
 ```bash
-$ poetry install --all-extras
+$ make
 ```
 
 **Step 3**. In case of a new repository (not cloned), initialize it:
@@ -43,12 +43,24 @@ $ git branch -M main
 $ git push -uf origin main
 ```
 
-## Installation for Production/Usage (after the package is published)
+### Before committing
+
+Automatic pre-commit hooks:
+```bash
+$ pre-commit install
+```
+Manual pre-commit hooks:
+```bash
+$ make qa
+```
+
+## Installation for Fast Evaluation Usage. Read only - Packaged previously created in dev environment (poetry build)
+
 
 ```bash
-$ pip install {{ cookiecutter.__package_slug }}
+$ conda create -n {{ cookiecutter.__package_slug }} python=3.10 -y && conda activate sales
+$ pip install dist/{{ cookiecutter.__package_slug }}-0.1.0-py3-none-any.whl
 ```
-Note: You must be authenticated with the private Package Registry in case the repository of software is not Python Package Index (PyPI)
 
 
 ## Usage
