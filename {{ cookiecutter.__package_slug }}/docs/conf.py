@@ -6,7 +6,7 @@ https://www.sphinx-doc.org/en/master/usage/configuration.html """
 
 # -- Project information -----------------------------------------------------
 
-project = u"{{ cookiecutter.__package_slug }}"
+project_copyright = u"{{ cookiecutter.__package_slug }}"
 copyright = u"{% now 'local', '%Y' %}, {{ cookiecutter.author_name }}"
 author = u"{{ cookiecutter.author_name }}"
 

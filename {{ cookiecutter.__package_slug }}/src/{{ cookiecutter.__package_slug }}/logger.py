@@ -1,19 +1,14 @@
 """
 Practical General Logger Module built upon logging module
-Angel Martinez-Tenor 2022
-Status: Production ready
-
+Angel Martinez-Tenor 2022-2023
 Example of high-level usage (caller module / notebook):
 >import log
->log = logger.init(subfolder="production_caller", level='INFO')
->log.info(" ---- Executing Production Caller ----")
-
+>log = logger.init(subfolder="app_caller", level='INFO')
+>log.info(" ---- App Caller ----")
 Example of submodule usage:
 >log = logger.get_logger(__name__)
 >log.warning()
-
 Logging levels: 10 or 'DEBUG', 20 or 'INFO', 30 or 'WARNING', 40 or'ERROR', 50 or'CRITICAL'
-
 Logging Module Reference: https://docs.python.org/3/library/logging.html
 """
 
@@ -53,7 +48,6 @@ def init(
          is given. Default: None
         file_suffix (str): Suffix of the log file (e.g.: release_N). Default: None
         save_log (bool): If True (default), save the log file. If False, only print the log messages in the console.
-
     Returns:
         logging.Logger: Logger object
     """
@@ -83,7 +77,7 @@ def init(
         fh.setFormatter(formatter)
         logger.addHandler(fh)
     global_dict["logger"] = logger
-    sys.excepthook = handle_exception  # log uncaught exceptions
+    sys.excepthook = handle_exception  # type: ignore # log uncaught exceptions
     return logger
 
 
