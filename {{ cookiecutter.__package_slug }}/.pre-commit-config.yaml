@@ -6,9 +6,6 @@
 # Update all versions: 'pre-commit autoupdate'
 # Advanced QA: pylint src --max-line-length 120. Also: pylint $(git ls-files '*.py') --max-line-length 120
 
-# Credits:
-# Adapted from Angel Martinez-Tenor personal repo:
-# https://github.com/angelmtenor/data-science-keras/blob/master/.pre-commit-config.yaml
 
 repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
@@ -114,7 +111,7 @@ repos:
 # --- JUPYTER NOTEBOOKS ONLY ---
 
 - repo: https://github.com/nbQA-dev/nbQA
-  rev: 1.5.3
+  rev: 1.6.3
   hooks:
 
     - id: nbqa-black

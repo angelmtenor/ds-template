@@ -1,12 +1,24 @@
-setup:
+setup::
 	@echo "Installing Environment"
 	poetry install --all-extras
-	mypy --install-types --non-interactive
 
-qa:
+update::
+	@echo "Updating Environment"
+	poetry update
+	pre-commit autoupdate
+
+qa::
 	@echo "Running QA"
-	pre-commit run --all-files
+	- mypy --install-types --non-interactive
+	- pre-commit run --all-files
 
-clean:
+qa_fast::
+	SKIP=pylint pre-commit run --all-files
+
+
+test::
+	pytest --cov=src
+
+clean::
 	@if [ -s .\\.git\\hooks ]; then rmdir .\\.git\\hooks /q /s; fi
 	@if [ -s poetry.lock ]; then rm poetry.lock; fi
