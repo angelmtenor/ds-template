@@ -2,7 +2,13 @@
 
 [![python](https://img.shields.io/badge/python-%5E3.8-blue)]()
 
-This cookiecutter is a customized modification of  [py-pkgs-cookiecutter](https://github.com/py-pkgs/py-pkgs-cookiecutter) for data science projects. `py-pkgs-cookiecutter` is a [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) template for creating a fully-featured Python package using [`poetry`](https://python-poetry.org). It supplements the [Python Packages book](https://py-pkgs.org) by Tomas Beuzen and Tiffany Timbers but can be used independently.
+This cookiecutter `ds-template` is a customized modification of  [py-pkgs-cookiecutter](https://github.com/py-pkgs/py-pkgs-cookiecutter) for data science projects, mainly adding the following features:
+- Development Container with pre-configured tools:Conda, Poetry and Git
+- Makefile with commands for installation, testing, qa, etc.
+- Complete pre-commit yaml for code formatting and qa
+
+
+`py-pkgs-cookiecutter` is a [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) template for creating a fully-featured Python package using [`poetry`](https://python-poetry.org). It supplements the [Python Packages book](https://py-pkgs.org) by Tomas Beuzen and Tiffany Timbers but can be used independently.
 
 ## Usage
 
@@ -22,42 +28,46 @@ Please refer to the [documentation](https://py-pkgs-cookiecutter.readthedocs.io/
 
 3. After responding to the prompts you should have a directory structure similar to that shown below. To learn more about the contents of this directory structure, please refer to the reference `py-pkgs-cookiecutter` [documentation](https://py-pkgs-cookiecutter.readthedocs.io/en/latest/).
 
-    ```text
-    pkg
-    ├── .github                    ┐
-    │   └── workflows              │ GitHub Actions workflow
-    │       └── ci-cd.yml          ┘
-    ├── .gitignore                 ┐
-    ├── .readthedocs.yml           │
-    ├── CHANGELOG.md               │
-    ├── CONDUCT.md                 │
-    ├── CONTRIBUTING.md            │
-    ├── docs                       │
-    │   ├── make.bat               │
-    │   ├── Makefile               │
-    │   ├── requirements.txt       │
-    │   ├── changelog.md           │
-    │   ├── conduct.md             │
-    │   ├── conf.py                │ Package documentation
-    │   ├── contributing.md        │
-    │   ├── index.md               │
-    │   └── usage.ipynb            │
-    ├── LICENSE                    │
-    |── README.md                  |
-    ├── styleguide.md            (NEW)
-    ├── pyproject.toml             ┐
-    ├── src                        │
-    │   └── pkg                    │ Package source code, metadata,
-    │       ├── __init__.py        │ and build instructions
-    │       └── pkg.py             |
-    ├── .pre-commit-config.yaml  (NEW)
-    ├── notebooks_dev            (NEW)
-    ├── Dockerfile               (NEW)
-    └── tests                      ┐
-        └── test_pkg.py            ┘ Package tests
-    ```
+```text
+├── CHANGELOG.md
+├── CONDUCT.md
+├── CONTRIBUTING.md
+├── .devcontainer
+│   ├── devcontainer.json
+│   └── Dockerfile
+├── Dockerfile
+├── docs
+│   ├── changelog.md
+│   ├── conduct.md
+│   ├── conf.py
+│   ├── contributing.md
+│   ├── index.md
+│   ├── make.bat
+│   ├── Makefile
+│   ├── requirements.txt
+│   └── usage.ipynb
+├── .gitignore
+├── LICENSE
+├── Makefile
+├── notebooks_dev
+│   └── pkg_dev.ipynb
+├── .pre-commit-config.yaml
+├── pyproject.toml
+├── README.md
+├── .readthedocs.yml
+├── src
+│   └── my_pkg
+│       ├── __init__.py
+│       ├── logger.py
+│       └── pkg.py
+├── styleguide.md
+└── tests
+    ├── conftest.py
+    ├── __pycache__
+    └── test_pkg.py
+```
 
-4. Open the `README.md` created in the new structure and refer to the **Installation Dev / Edior Mode** Section
+4. Open the `README.md` created in the new structure and refer to the **Installation in Dev / Editor modeMode** Section
 
 
 ## License
