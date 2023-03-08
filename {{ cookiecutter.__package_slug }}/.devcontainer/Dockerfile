@@ -77,5 +77,9 @@ RUN conda update --all -y && conda create -n dev python=3.10 -y && conda init ba
   echo "conda activate dev" >> ~/.bashrc && source activate dev && \
   conda install -y -c conda-forge 'cookiecutter>=2' ipykernel
 
+# Docker (optional - reboot required in case of post-installation)
+# RUN curl -fsSL https://get.docker.com -o get-docker.sh
+# RUN sudo sh get-docker.sh
+
 # Entrypoint - BASH
 CMD [ "/usr/bin/bash"]
