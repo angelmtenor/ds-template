@@ -80,6 +80,8 @@ RUN conda update --all -y && conda create -n dev python=3.10 -y && conda init ba
 # Docker (optional - reboot required in case of post-installation)
 # RUN curl -fsSL https://get.docker.com -o get-docker.sh
 # RUN sudo sh get-docker.sh
+# RUN sudo usermod -aG docker ${USER}
+
 
 # Entrypoint - BASH
 CMD [ "/usr/bin/bash"]
