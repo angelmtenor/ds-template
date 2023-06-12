@@ -64,7 +64,9 @@ RUN mkdir -p ~/miniconda3 && \
 # Poetry
 RUN curl -sSL https://install.python-poetry.org | python3 -
 ENV PATH="$HOME/.local/bin:$PATH"
-# RUN source ~/.bashrc
+# Manually:
+# echo 'export PATH="/home/'$USER'/.local/bin:$PATH"' >> ~/.bashrc
+# source ~/.bashrc
 
 # Git: Change default branch to main
 RUN git config --global init.defaultBranch main
