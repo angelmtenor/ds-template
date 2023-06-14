@@ -8,7 +8,7 @@
 # 2: Execute with comand `source setup_user.sh`
 
 
-# INSTALL MINICONDA (user)
+# Install Miniconda
 mkdir -p ~/miniconda3 && \
   curl -sSL https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o ~/miniconda3/miniconda.sh && \
   bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3 && \
@@ -17,12 +17,12 @@ mkdir -p ~/miniconda3 && \
   ~/miniconda3/bin/conda init zsh
 source ~/.bashrc
 
-# Poetry
+# Install Poetry
 curl -sSL https://install.python-poetry.org | python3 -
 # ENV PATH="$HOME/.local/bin:$PATH"
 echo 'export PATH="/home/'$USER'/.local/bin:$PATH"' >> ~/.bashrc
 
-# Git: Change default branch to main
+# Setup Git (already installed by admin): Change default branch to main
 git config --global init.defaultBranch main
 source ~/.bashrc
 
