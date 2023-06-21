@@ -11,7 +11,7 @@ ENV PATH /opt/conda/bin:$PATH
 
 RUN apt-get update --fix-missing -y && apt-get upgrade -y \
   && apt-get install -y --no-install-recommends git make curl wget bzip2 ca-certificates libglib2.0-0 libxext6 \
-  libsm6 libxrender1 mercurial subversion nano htop unzip
+  libsm6 libxrender1 mercurial subversion nano htop unzip zip
 
 # # INSTALL MINICONDA (root)
 # RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
