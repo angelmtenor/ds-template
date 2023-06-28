@@ -15,7 +15,7 @@ qa::
 	- mypy --install-types --non-interactive
 	- pre-commit run --all-files
 
-qa_fast::
+qa-fast::
 	@echo "Running fast QA (skip: mypy, pylint & interrogate)"
 	SKIP=mypy,pylint,interrogate pre-commit run --all-files
 
