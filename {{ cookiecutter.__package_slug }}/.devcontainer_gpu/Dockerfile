@@ -19,12 +19,12 @@ RUN apt-get install nvidia-kernel-common-535 -y
 # RUN apt-get install nvidia-cuda-toolkit -y
 
 # INSTALL MINICONDA (root)
-RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
-  /bin/bash ~/miniconda.sh -b -p /opt/conda && \
-  rm ~/miniconda.sh && \
-  ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
-  echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
-  echo "conda activate base" >> ~/.bashrc
+# RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
+#   /bin/bash ~/miniconda.sh -b -p /opt/conda && \
+#   rm ~/miniconda.sh && \
+#   ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
+#   echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
+#   echo "conda activate base" >> ~/.bashrc
 
 # CREATE AND ACTIVATE A NON ROOT USER:
 
@@ -82,15 +82,16 @@ RUN source ~/.bashrc
 
 # Dev environment with cookiecutter and ipykernel. Can be used with poetry, pip...
 ENV PATH=~/miniconda3/bin:$PATH
-RUN conda update --all -y && conda create -n dev python=3.10 -y && conda init bash && \
+# RUN conda update --all -y
+RUN conda create -n dev python=3.11 -y && conda init bash && \
   echo "conda activate dev" >> ~/.bashrc && source activate dev && \
-  conda install -y -c conda-forge 'cookiecutter>=2' ipykernel
+  pip install cookiecutter ipykernel
+# conda install -y -c conda-forge 'cookiecutter>=2' ipykernel
 
 # Docker (optional - reboot required in case of post-installation)
 # RUN curl -fsSL https://get.docker.com -o get-docker.sh
 # RUN sudo sh get-docker.sh
 # RUN sudo usermod -aG docker ${USER}
-
 
 # Entrypoint - BASH
 CMD [ "/usr/bin/bash"]
