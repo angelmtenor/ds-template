@@ -77,5 +77,5 @@ Check out the contributing guidelines
 
 ## Credits
 
-`{{ cookiecutter.__package_slug }}` was created from a Data Science Template developed by Angel Martinez-Tenor. The template was built upon `py-pkgs-cookiecutter` [template] (https://github.com/py-pkgs/py-pkgs-cookiecutter)
+`{{ cookiecutter.__package_slug }}` originated from [Angel Martinez-Tenor's Data Science Template](https://github.com/angelmtenor/ds-template), which itself was developed based on the [py-pkgs-cookiecutter template](https://github.com/py-pkgs/py-pkgs-cookiecutter)
 
