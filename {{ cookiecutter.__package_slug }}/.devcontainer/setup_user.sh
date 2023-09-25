@@ -30,12 +30,7 @@ source ~/.bashrc
 conda update --all -y
 
 # Dev enviornment with cookiecutter and ipykernel. Can be used with poetry, pip...
-conda create -n dev python=3.10 -y && conda init bash && \
+conda create -n dev python=3.11 -y && conda init bash && \
   echo "conda activate dev" >> ~/.bashrc && source activate dev && \
-  conda install -y -c conda-forge 'cookiecutter>=2' ipykernel
+  pip install cookiecutter ipykernel
 echo "Environment dev created"
-
-# Test environmet. Dast evaluation with pip packages (no need for poetry)
-conda create -n test python=3.10 -y && conda activate test && \
-  pip install jupyter pandas transformers
-echo "Environment test created"
