@@ -13,6 +13,13 @@ RUN apt-get update --fix-missing -y && apt-get upgrade -y \
   && apt-get install -y --no-install-recommends git make curl wget bzip2 ca-certificates libglib2.0-0 libxext6 \
   libsm6 libxrender1 mercurial subversion nano htop unzip zip
 
+# GPU ONLY: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
+# RUN apt-get install nvtop ubuntu-drivers-common -y
+# RUN apt-get install nvidia-kernel-common-535 -y
+
+# Optional
+# RUN apt-get install nvidia-cuda-toolkit -y
+
 # # INSTALL MINICONDA (root)
 # RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
 #   /bin/bash ~/miniconda.sh -b -p /opt/conda && \

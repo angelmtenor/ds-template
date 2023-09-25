@@ -15,4 +15,9 @@
     },
     "name": "DS Ubuntu 22",
     "remoteUser": "user"
+    // GPU ONLY:
+    // "runArgs": [
+    //     "--gpus",
+    //     "all"
+    //   ]
 }
