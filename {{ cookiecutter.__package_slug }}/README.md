@@ -22,7 +22,7 @@ Create or use a Machine with Conda, Git and Poetry as closely as defined in `.de
 **Step 1**. Enter to the root path of the repo and use or create a new conda environment for development:
 
 ```bash
-$ conda create -n dev python=3.10 -y && conda activate dev
+$ conda create -n dev python=3.11 -y && conda activate dev
 ```
 
 **Step 2**. Install all the Dependencies and the package in editor mode:
@@ -58,7 +58,7 @@ $ make qa
 
 
 ```bash
-$ conda create -n {{ cookiecutter.__package_slug }} python=3.10 -y && conda activate sales
+$ conda create -n {{ cookiecutter.__package_slug }} python=3.11 -y && conda activate {{ cookiecutter.__package_slug }}
 $ pip install dist/{{ cookiecutter.__package_slug }}-0.1.0-py3-none-any.whl
 ```
 

@@ -16,13 +16,13 @@ readme = "README.md"
 # Core Packages:  poetry add <package>  (to remove: poetry remove <package>)
 # Common issue: In case of incompatibility error after 'poetry add <package>', just set the --python property to the one
 # suggested at the end of the error message. e.g.:
-# output message: ... a possible solution would be to set the `python` property to ">=3.10,<3.11"
-# solution: $ poetry add pandas-profiling --python ">=3.10,<3.11"
+# output message: ... a possible solution would be to set the `python` property to ">=3.11,<3.12"
+# solution: $ poetry add pandas-profiling --python ">=3.11,<3.12"
 
 python = "^{{ cookiecutter.python_version }}"
-pandas = ">=1.5.0"
-pyarrow = ">=9.0.0"
-notebook = ">=6.5.2"
+pandas = ">=2.1"
+pyarrow = ">=13"
+notebook = ">=7"
 jupyter = ">=1.0.0"
 jupyter-contrib-nbextensions = ">=0.7.0"
 
@@ -34,20 +34,24 @@ jupyter-contrib-nbextensions = ">=0.7.0"
 [tool.poetry.group.dev.dependencies]
 # Edition Only Packages:  poetry add <package> --group dev (to remove: poetry remove <package>)
 # They won't be on the final package (pip install <my-package>), but will be installed when developing the package
-pytest-cov = ">=4.0.0"
-pre-commit = ">=2.21.0"
-mypy = ">=0.991"
-flake8 = ">=6.0.0"
-pylint = ">=2.15.10"
-isort = ">=5.11.4"
-black = ">=22.12.0"
-pyupgrade = ">=3.3.1"
-snakeviz = ">=2.1.1"
+pytest-cov = ">=4.1"
+pre-commit = ">=3.4.0"
+mypy = ">=1.5"
+flake8 = ">=6.1.0"
+pylint = ">=2.17"
+isort = ">=5.12"
+black = ">=23.9"
+pyupgrade = ">=3.12"
+snakeviz = ">=2.2"
 # refurb = ">=1.12.0"
 
-# CI/CD section - Github Actions
+
 {% if cookiecutter.include_github_actions == 'ci+cd' -%}
+# CI/CD section - Github Actions
 [tool.semantic_release]
+
+{% endif %}
+
 version_variable = "pyproject.toml:version" # version location
 branch = "main"                             # branch to make releases of
 changelog_file = "CHANGELOG.md"             # changelog file
@@ -57,11 +61,7 @@ upload_to_release = true                    # auto-create GitHub release
 upload_to_pypi = false                      # don't auto-upload to PyPI
 remove_dist = false                         # don't remove dists
 patch_without_tag = true                    # patch release by default
-{% endif %}
-
 # Poetry api for building and publishing (do not change)
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
-
-
