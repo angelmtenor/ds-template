@@ -49,11 +49,14 @@ Automatic pre-commit hooks:
 ```bash
 $ pre-commit install
 ```
-Manual pre-commit hooks:
+Manual pre-commit  - Complete set of checks (slow):
 ```bash
 $ make qa
 ```
-
+Manual pre-commit  - Reduced set of checks (fast):
+```bash
+make qa-fast
+```
 ## Installation for Fast Evaluation Usage. Read only - Packaged previously created in dev environment (poetry build)
 
 
