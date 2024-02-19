@@ -34,3 +34,5 @@ conda create -n dev python=3.11 -y && conda init bash && \
   echo "conda activate dev" >> ~/.bashrc && source activate dev && \
   pip install cookiecutter ipykernel
 echo "Environment dev created"
+
+mkdir PROJECTS
