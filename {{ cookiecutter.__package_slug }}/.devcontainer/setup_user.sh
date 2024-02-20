@@ -1,38 +1,64 @@
 #!/bin/bash
-# Author: Angel Martinez Tenor 2023
+# Angel Martinez Tenor 2023
 
 # First setup required with new users in cloud / on prem machine (alredy done in dev containers)
+
+# Create a new user and log in with it (Admin level)
+# sudo adduser <username>
+# sudo usermod -aG docker <username>
+# newgrp docker
+# su <username>
+# cd ~
+
 
 # USER LEVEL INSTRUCTIONS (NEVER USE SUDO):
 # 1: Enable execution:   `chmod +x setup_user.sh`
 # 2: Execute with comand `source setup_user.sh`
 
+set -e
+set -u
+
+# Variables
+MINICONDA_DIR=~/miniconda3
+MINICONDA_PATH=$MINICONDA_DIR/bin/conda
+POETRY_PATH=~/.local/bin
+
+# Check if curl, python3, git, and pip are installed
+command -v curl python3 git pip >/dev/null 2>&1 || { echo >&2 "I require curl, python3, git, and pip but they're not installed.  Aborting."; exit 1; }
 
 # Install Miniconda
-mkdir -p ~/miniconda3 && \
-  curl -sSL https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o ~/miniconda3/miniconda.sh && \
-  bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3 && \
-  rm ~/miniconda3/miniconda.sh && \
-  ~/miniconda3/bin/conda init bash && \
-  ~/miniconda3/bin/conda init zsh
-source ~/.bashrc
+if [[ ! -d $MINICONDA_DIR ]]; then
+  mkdir -p $MINICONDA_DIR && \
+  curl -sSL https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o $MINICONDA_DIR/miniconda.sh && \
+  bash $MINICONDA_DIR/miniconda.sh -b -u -p $MINICONDA_DIR && \
+  rm $MINICONDA_DIR/miniconda.sh && \
+  $MINICONDA_PATH init bash && \
+  $MINICONDA_PATH init zsh
+  source ~/.bashrc
+fi
 
 # Install Poetry
-curl -sSL https://install.python-poetry.org | python3 -
-# ENV PATH="$HOME/.local/bin:$PATH"
-echo 'export PATH="/home/'$USER'/.local/bin:$PATH"' >> ~/.bashrc
+if [[ ! -d $POETRY_PATH ]]; then
+  curl -sSL https://install.python-poetry.org | python3 -
+  echo 'export PATH="/home/'$USER'/.local/bin:$PATH"' >> ~/.bashrc
+  source ~/.bashrc
+fi
 
 # Setup Git (already installed by admin): Change default branch to main
 git config --global init.defaultBranch main
-source ~/.bashrc
 
 # Create custom DEV and TEST environments
-conda update --all -y
+$MINICONDA_PATH update --all -y
 
-# Dev enviornment with cookiecutter and ipykernel. Can be used with poetry, pip...
-conda create -n dev python=3.11 -y && conda init bash && \
+# Dev environment with cookiecutter and ipykernel. Can be used with poetry, pip...
+if [[ ! $($MINICONDA_PATH env list | grep '^dev\s') ]]; then
+  $MINICONDA_PATH create -n dev python=3.11 -y && $MINICONDA_PATH init bash && \
   echo "conda activate dev" >> ~/.bashrc && source activate dev && \
   pip install cookiecutter ipykernel
-echo "Environment dev created"
+  echo "Environment dev created"
+fi
 
-mkdir PROJECTS
+# Create PROJECTS directory if it doesn't exist
+if [[ ! -d ~/PROJECTS ]]; then
+  mkdir ~/PROJECTS
+fi
