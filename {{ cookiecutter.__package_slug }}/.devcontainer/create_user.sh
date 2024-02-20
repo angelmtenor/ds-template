@@ -56,6 +56,7 @@ su - $username -c "
   read -p 'Do you want to proceed with the setup? This will install git, conda, and poetry. (Y/n): ' proceed_with_setup
   proceed_with_setup=${proceed_with_setup:-Y}
   if [[ \$proceed_with_setup =~ ^[Yy]$ ]]; then
+    wget https://github.com/angelmtenor/ds-template/raw/main/%7B%7B%20cookiecutter.__package_slug%20%7D%7D/.devcontainer/setup_user.sh
     chmod +x setup_user.sh
     source setup_user.sh
   fi
