@@ -22,9 +22,21 @@ readme = "README.md"
 python = "^{{ cookiecutter.python_version }}"
 pandas = ">=2.1"
 pyarrow = ">=13"
-notebook = ">=7"
-jupyter = ">=1.0.0"
-jupyter-contrib-nbextensions = ">=0.7.0"
+py-cpuinfo = ">=9.0.0"
+python-dotenv = ">=1.0.0"
+
+# sentence-transformers = ">=2.2.2"
+
+# LLM
+# langchain = ">=0.1.0"
+# openai = ">=1.0.0"
+# tiktoken = ">=0.5.1"
+
+# Retrieval / Database
+# faiss-cpu = ">=1.7.4"
+
+# google-cloud-aiplatform = ">=1.38.1"
+
 
 [tool.poetry.extras]
 # Advanced: recommended for large Building Blocks only
@@ -34,6 +46,21 @@ jupyter-contrib-nbextensions = ">=0.7.0"
 [tool.poetry.group.dev.dependencies]
 # Edition Only Packages:  poetry add <package> --group dev (to remove: poetry remove <package>)
 # They won't be on the final package (pip install <my-package>), but will be installed when developing the package
+notebook = ">=7"
+jupyter = ">=1.0.0"
+jupyter-contrib-nbextensions = ">=0.7.0"
+
+# Plottting
+# plotly = ">=5.17.0"
+
+# Front Lite
+# streamlit = ">=1.27.2"
+
+# API
+# fastapi = ">=0.100.0"
+# uvicorn = ">=0.23.1"
+
+
 pytest-cov = ">=4.1"
 pre-commit = ">=3.4.0"
 mypy = ">=1.5"
