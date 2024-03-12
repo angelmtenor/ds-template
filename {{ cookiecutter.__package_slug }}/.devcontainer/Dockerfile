@@ -10,7 +10,7 @@ ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 ENV PATH /opt/conda/bin:$PATH
 
 RUN apt-get update --fix-missing -y && apt-get upgrade -y \
-  && apt-get install -y --no-install-recommends git make curl wget bzip2 ca-certificates libglib2.0-0 libxext6 \
+  && apt-get install -y --no-install-recommends git git-flow make curl wget bzip2 ca-certificates libglib2.0-0 libxext6 \
   libsm6 libxrender1 mercurial subversion nano htop unzip zip
 
 # GPU ONLY: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html

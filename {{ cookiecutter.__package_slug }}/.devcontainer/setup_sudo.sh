@@ -2,7 +2,7 @@
 # Angel Martinez Tenor 2023
 
 sudo apt-get update --fix-missing -y && sudo apt-get upgrade -y \
-  && sudo apt-get install -y --no-install-recommends git make curl wget bzip2 ca-certificates libglib2.0-0 libxext6 \
+  && sudo apt-get install -y --no-install-recommends git git-flow make curl wget bzip2 ca-certificates libglib2.0-0 libxext6 \
   libsm6 libxrender1 mercurial subversion nano htop gcc gpp clang linux-libc-dev
 
 read -p "Do you want to install GPU (NVIDIA/CUDA) support? (Y/n) " -n 1 -r
