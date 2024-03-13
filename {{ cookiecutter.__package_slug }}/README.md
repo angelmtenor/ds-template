@@ -23,25 +23,20 @@ Here are some key points about this setup:
 **Step 1**. Enter to the root path of the repo and use or create a new conda environment for development:
 
 ```bash
-$ conda create -n dev python=3.11 -y && conda activate dev
+conda create -n dev python=3.11 -y && conda activate dev
 ```
 
-**Step 2**. Install all the Dependencies and the package in editor mode:
+**Step 2**. Install all dependencies and the package in editor mode, initialize the repository, and perform quality assurance (pre-commit):
 
 ```bash
-$ make
+make
 ```
 
-**Step 3**. In case of a new repository (not cloned), initialize it:
-
+**Step 3**. Link the local repository to the cloud repository. For example:
 ```bash
-$ git init .
-```
-and link it to the cloud repo. e.g.:
-```bash
-$ git remote add origin https://github.com/angelmtenor/ds_template.git
-$ git branch -M main
-$ git push -uf origin main
+git remote add origin https://github.com/angelmtenor/ds_template.git
+git branch -M main
+git push -u origin main
 ```
 
 ### Before committing
@@ -49,7 +44,7 @@ $ git push -uf origin main
 
 Manual pre-commit  - Complete set of checks (slow):
 ```bash
-$ make qa
+make qa
 ```
 Manual pre-commit  - Reduced set of checks (fast):
 ```bash
@@ -57,14 +52,14 @@ make qa-fast
 ```
 Automatic pre-commit hooks (advanced, not recommended for fast development):
 ```bash
-$ pre-commit install
+pre-commit install
 ```
 ## Installation for Fast Evaluation Usage. Read only - Packaged previously created in dev environment (poetry build)
 
 
 ```bash
-$ conda create -n {{ cookiecutter.__package_slug }} python=3.11 -y && conda activate {{ cookiecutter.__package_slug }}
-$ pip install dist/{{ cookiecutter.__package_slug }}-0.1.0-py3-none-any.whl
+conda create -n {{ cookiecutter.__package_slug }} python=3.11 -y && conda activate {{ cookiecutter.__package_slug }}
+pip install dist/{{ cookiecutter.__package_slug }}-0.1.0-py3-none-any.whl
 ```
 
 
