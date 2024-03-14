@@ -1,9 +1,12 @@
 setup::
+	@echo "Setup Git and Gitflow"
+	- git config --global init.defaultBranch main
+	- git init
+	- git flow init -d
 	@echo "Installing Environment"
 	poetry install --all-extras
-	- git config --global init.defaultBranch main
-	- git init && git add .
-	- pre-commit run --all-files
+	- git add .
+	- SKIP=mypy,pylint,interrogate,jupyter-nb-clear-output pre-commit run --all-files
 
 update::
 	@echo "Updating Environment"
@@ -27,3 +30,9 @@ clean::
 	@if [ -s .\\.git\\hooks ]; then rmdir .\\.git\\hooks /q /s; fi
 	@if [ -s poetry.lock ]; then rm poetry.lock; fi
 	rm -rf .pytest_cache
+
+get-features::
+	git log --pretty=%B --grep="feat"
+
+compress::
+	zip -r archive.zip . -x "*.git*" -x "*.mypy*" -x "*/scenarios/*" -x "*log/*"  -x "*/__pycache__/*" -x "*.pytest_cache/*" -x "*/log/*"
