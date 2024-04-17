@@ -40,7 +40,7 @@ if [[ $generate_ssh_key =~ ^[Yy]$ ]]; then
     cd ~
     ssh-keygen -t ed25519 -f ~/.ssh/$label -q -N ''
     cp ~/.ssh/$label.pub ~/.ssh/authorized_keys
-    echo '$label
+    echo 'Host $label
       HostName $hostname
       IdentityFile ~/.ssh/$label
       User $username
