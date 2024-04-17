@@ -60,4 +60,9 @@ su - $username -c "
     chmod +x setup_user.sh
     source setup_user.sh
   fi
+
+  echo 'Copy the following SSH config to your local machine:'
+  cat ~/.ssh/config
+  echo 'Copy the following private key to the servers you need access to:'
+  cat ~/.ssh/$label
 "
