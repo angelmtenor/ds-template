@@ -1,5 +1,5 @@
 #!/bin/bash
-# Angel Martinez Tenor 2023
+# Angel Martinez Tenor 2023-2024
 
 # Make the script executable with the command: chmod +x create_user.sh
 # Run the script with root privileges using: sudo ./create_user.sh

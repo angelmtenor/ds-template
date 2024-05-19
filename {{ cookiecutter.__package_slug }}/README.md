@@ -51,8 +51,6 @@ git branch -M main
 git push -u origin main
 ```
 
-
-
 ## Installation for Fast Evaluation Usage
 
 This section is for read-only usage. The package should have been previously created in the dev environment using `poetry build`. The steps for this process can be found under the `conda create` and `pip install` labels in the Makefile.
@@ -92,7 +90,6 @@ make qa-fast
 pre-commit install
 ```
 
-
 ## License
 
 `{{ cookiecutter.__package_slug }}` was created by {{ cookiecutter.author_name }}. {% if cookiecutter.open_source_license != 'None' -%}It is licensed under the terms of the {{ cookiecutter.open_source_license }} license.{% else %}{{ cookiecutter.author_name }} retains all rights to the source and it may not be reproduced, distributed, or used to create derivative works.{% endif %}
@@ -100,4 +97,3 @@ pre-commit install
 ## Credits
 
 `{{ cookiecutter.__package_slug }}` originated from [Angel Martinez-Tenor's Data Science Template](https://github.com/angelmtenor/ds-template), which itself was developed based on the [py-pkgs-cookiecutter template](https://github.com/py-pkgs/py-pkgs-cookiecutter)
-
