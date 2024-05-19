@@ -37,11 +37,13 @@ Here are some key points about this setup:
 conda create -n dev python={{ cookiecutter.python_version }} -y && conda activate dev
 ```
 
-**Step 2**. Install all dependencies and initialize the repository in editor mode. This step also performs quality assurance using pre-commit hooks. The exact steps for this process can be found under the `setup` label in the Makefile.
+**Step 2**. Install all dependencies and initialize the repository in editor mode. This step also performs quality assurance using pre-commit hooks. The exact steps for this process can be found under the `setup` label in the Makefile. It is recommended to run `make setup` twice if any warnings or format fixes have been made to ensure all pre-commit tests pass.
 
 ```bash
 make setup
 ```
+Please note, if any warnings are encountered or format fixes are made during the execution of the command, it is recommended to run the command a second time. This also applies to pre-commit instructions. If a pre-commit hook modifies a file during its run, executing the pre-commit again will likely pass the test.
+
 
 **Step 3**. (Optional) If you've created a new repository, link your local repository to the remote repository. Replace the URL with your repository's URL. If you've cloned an existing repository, you can skip this step.
 
