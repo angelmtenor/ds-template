@@ -6,70 +6,92 @@
 
 ## Installation in Dev / Editor mode
 
-**Step 0: Setting Up Your Development Environment**
+### Step 0: Setting Up Your Development Environment
 
-**Prerequisites**: We recommend using a Debian/Ubuntu Machine, VM, or container for optimal compatibility.
+**Prerequisites**: We recommend using a Debian/Ubuntu machine, VM, or container for optimal compatibility.
 
-This step is a one-time setup that applies to all data science projects. You'll need to create or use a machine with Conda, Git, and Poetry installed. The configuration should closely match the one defined in `.devcontainer/Dockerfile`.
+This one-time setup applies to all data science projects. You'll need a machine with Conda, Git, and Poetry installed. Ensure that your configuration closely matches the one defined in `.devcontainer/Dockerfile`.
 
 Here are some key points about this setup:
 
-- The Dockerfile is configured with a non-root user. This allows the same setup to be used on a WSL Ubuntu Machine or any Debian/Ubuntu Cloud Machine (e.g., Vertex AI workbench, Azure VM).
-- If you're using an Ubuntu/Debian machine with a non-root user (like Ubuntu in WSL or Vertex AI VM), you can install the necessary tools from the "non-root user" section of the Dockerfile. You may need to use `sudo apt-get install <software>` for some installations.
-- If you're using a pre-configured Cloud VM, it likely already has Git and Conda installed, so you can skip those installation steps.
-- For a quick setup, you can directly use the development container defined in `.devcontainer/Dockerfile` (Docker is required for this). In Visual Studio Code, open the root folder of this repo, press `F1`, and select **Dev Containers: Open Workspace in Container**. The container will open the same workspace after the Docker Image is built.
+- The Dockerfile is configured with a non-root user, making it compatible with WSL Ubuntu machines or any Debian/Ubuntu VM (e.g., Azure, AWS, Google).
+- If you're already using an Ubuntu/Debian machine with a non-root user (e.g., Ubuntu in WSL), follow these commands from the root folder of the repo:
+
+    ```bash
+    # Sudo-level tools
+    chmod +x .devcontainer/setup_sudo.sh
+    sudo .devcontainer/setup_sudo.sh
+
+    # User tools: Git, Conda, Poetry
+    chmod +x .devcontainer/setup_user.sh
+    source .devcontainer/setup_user.sh
+    ```
+
+- Note that on some cloud VMs, Git and Conda are likely already installed, so you can skip those steps.
+- For a quick setup, use the development container defined in `.devcontainer/Dockerfile` (Docker required). In Visual Studio Code, open the root folder of this repo, press `F1`, and select **Dev Containers: Open Workspace in Container**. The container will open the same workspace after building the Docker image.
 
 
-**Step 1**. Enter to the root path of the repo and use or create a new conda environment for development:
+**Step 1**. Navigate to the root directory of the repository and create a new conda environment for development:
 
 ```bash
 conda create -n dev python={{ cookiecutter.python_version }} -y && conda activate dev
 ```
 
-**Step 2**. Install all dependencies and the package in editor mode, initialize the repository, and perform quality assurance (pre-commit):
+**Step 2**. Install all dependencies and initialize the repository in editor mode. This step also performs quality assurance using pre-commit hooks. The exact steps for this process can be found under the `setup` label in the Makefile.
 
 ```bash
-make
+make setup
 ```
 
-**Step 3**. Link the local repository to the cloud repository. For example:
+**Step 3**. (Optional) If you've created a new repository, link your local repository to the remote repository. Replace the URL with your repository's URL. If you've cloned an existing repository, you can skip this step.
+
 ```bash
-git remote add origin https://github.com/angelmtenor/ds_template.git
+git remote add origin <url-remote-repository>.git
 git branch -M main
 git push -u origin main
 ```
 
-### Before committing
 
 
-Manual pre-commit  - Complete set of checks (slow):
-```bash
-make qa
-```
-Manual pre-commit  - Reduced set of checks (fast):
-```bash
-make qa-fast
-```
-Automatic pre-commit hooks (advanced, not recommended for fast development):
-```bash
-pre-commit install
-```
-## Installation for Fast Evaluation Usage. Read only - Packaged previously created in dev environment (poetry build)
+## Installation for Fast Evaluation Usage
 
+This section is for read-only usage. The package should have been previously created in the dev environment using `poetry build`. The steps for this process can be found under the `conda create` and `pip install` labels in the Makefile.
 
 ```bash
 conda create -n {{ cookiecutter.__package_slug }} python={{ cookiecutter.python_version }} -y && conda activate {{ cookiecutter.__package_slug }}
 pip install dist/{{ cookiecutter.__package_slug }}-0.1.0-py3-none-any.whl
 ```
 
-
 ## Usage
 
-- TODO (explain the usage of the package). Refer to `Makefile` for execution (e.g., `make run-demo`).
+- TODO: Add detailed instructions for using the package. Refer to the  labels in`Makefile` for execution commands and steps.
 
 ## Contributing
 
-Check out the contributing guidelines
+Check out the contributing guidelines.
+
+### Before Committing
+
+Before committing your changes, run the following quality assurance checks:
+
+- **Manual pre-commit** - Complete set of checks (slow). The steps for this process can be found under the `make qa` label in the Makefile.
+
+```bash
+make qa
+```
+
+- **Manual pre-commit** - Reduced set of checks (fast). The steps for this process can be found under the `make qa-fast` label in the Makefile.
+
+```bash
+make qa-fast
+```
+
+- **Automatic pre-commit hooks** (advanced, not recommended for fast development). This installs pre-commit hooks that automatically run before each commit.
+
+```bash
+pre-commit install
+```
+
 
 ## License
 

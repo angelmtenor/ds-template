@@ -1,13 +1,17 @@
 """
 Practical General Logger Module built upon logging module
 Angel Martinez-Tenor 2022-2023
+
 Example of high-level usage (caller module / notebook):
->import log
->log = logger.init(subfolder="app_caller", level='INFO')
->log.info(" ---- App Caller ----")
+
+import log
+log = logger.init(subfolder="app_caller", level='INFO')
+log.info(" ---- App Caller ----")
+
 Example of submodule usage:
->log = logger.get_logger(__name__)
->log.warning()
+log = logger.get_logger(__name__)
+log.warning()
+
 Logging levels: 10 or 'DEBUG', 20 or 'INFO', 30 or 'WARNING', 40 or'ERROR', 50 or'CRITICAL'
 Logging Module Reference: https://docs.python.org/3/library/logging.html
 """
@@ -20,7 +24,7 @@ from argparse import ArgumentParser
 from datetime import datetime
 from pathlib import Path
 
-APP_LOGGER_NAME = "DS_logger"
+APP_LOGGER_NAME = "log"
 LOG_PATH = Path("log")
 TIMESTAMP_COMPLETE = "%Y-%m-%d %H:%M:%S"
 TIMESTAMP_REDUCED = "%H:%M:%S"

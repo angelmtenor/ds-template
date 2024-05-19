@@ -1,19 +1,22 @@
 #!/bin/bash
-# Angel Martinez Tenor 2023
+# Angel Martinez Tenor 2023-2024
 
-# First setup required with new users in cloud / on prem machine (alredy done in dev containers)
+# This script is used for the initial setup required for new users on cloud or on-premises machines.
+# Note: This setup is already done in development containers.
 
-# Create a new user and log in with it (Admin level)
+# To create a new user and log in with it (Admin level), use the following commands:
 # sudo adduser <username>
 # sudo usermod -aG docker <username>
 # newgrp docker
 # su <username>
 # cd ~
 
-
-# USER LEVEL INSTRUCTIONS (NEVER USE SUDO):
-# 1: Enable execution:   `chmod +x setup_user.sh`
-# 2: Execute with comand `source setup_user.sh`
+# USER LEVEL INSTRUCTIONS:
+# These instructions should be followed at the user level. Avoid using 'sudo' with these commands.
+# Step 1: Enable execution of the script with the following command:
+# chmod +x setup_user.sh
+# Step 2: Execute the script with the following command:
+# source setup_user.sh
 
 set -e
 set -u
@@ -62,3 +65,5 @@ fi
 if [[ ! -d ~/PROJECTS ]]; then
   mkdir ~/PROJECTS
 fi
+
+echo "Finished setting up user environment"
