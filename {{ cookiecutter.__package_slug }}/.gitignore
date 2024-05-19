@@ -125,10 +125,24 @@ dmypy.json
 # MacOS
 .DS_Store
 
-# NEW IN COOKIECUTTER-DS-GENERIC
+# OOKIECUTTER-DS-GENERIC
 notebooks_old/
+notebooks_dev/
+notebooks_exp/
+scenarios/
+
 data_cache**/
 cache**/
 exp/
 z_old/
+src_old/
 *.log
+*.vscode
+
+# AI / GENAI
+*pkl
+*faiss
+output.pstats
+*.pkl
+*.parquet
+.env
