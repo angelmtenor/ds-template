@@ -36,3 +36,6 @@ get-features::
 
 compress::
 	zip -r archive.zip . -x "*.git*" -x "*.mypy*" -x "*/scenarios/*" -x "*log/*"  -x "*/__pycache__/*" -x "*.pytest_cache/*" -x "*/log/*"
+
+# profile::
+# 	python -m cProfile -o ./profile/output.pstats my_script.py && snakeviz ./profile/output.pstats
