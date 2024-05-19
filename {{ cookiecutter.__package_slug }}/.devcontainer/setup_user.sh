@@ -52,7 +52,7 @@ $MINICONDA_PATH update --all -y
 
 # Dev environment with cookiecutter and ipykernel. Can be used with poetry, pip...
 if [[ ! $($MINICONDA_PATH env list | grep '^dev\s') ]]; then
-  $MINICONDA_PATH create -n dev python=3.11 -y && $MINICONDA_PATH init bash && \
+  $MINICONDA_PATH create -n dev python={{ cookiecutter.python_version }} -y && $MINICONDA_PATH init bash && \
   echo "conda activate dev" >> ~/.bashrc && source activate dev && \
   pip install cookiecutter ipykernel
   echo "Environment dev created"

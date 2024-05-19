@@ -16,8 +16,8 @@ readme = "README.md"
 # Core Packages:  poetry add <package>  (to remove: poetry remove <package>)
 # Common issue: In case of incompatibility error after 'poetry add <package>', just set the --python property to the one
 # suggested at the end of the error message. e.g.:
-# output message: ... a possible solution would be to set the `python` property to ">=3.11,<3.12"
-# solution: $ poetry add pandas-profiling --python ">=3.11,<3.12"
+# output message: ... a possible solution would be to set the `python` property to ">=3.12,<3.13"
+# solution: $ poetry add <package-name> --python ">=3.12,<3.13"
 
 python = "^{{ cookiecutter.python_version }}"
 pandas = ">=2.1"
@@ -68,7 +68,7 @@ flake8 = ">=6.1.0"
 pylint = ">=2.17"
 isort = ">=5.12"
 black = ">=23.9"
-pyupgrade = ">=3.12"
+pyupgrade = ">={{ cookiecutter.python_version }}"
 snakeviz = ">=2.2"
 
 

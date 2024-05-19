@@ -85,7 +85,7 @@ RUN source ~/.bashrc
 # Dev environment with cookiecutter and ipykernel. Can be used with poetry, pip...
 ENV PATH=~/miniconda3/bin:$PATH
 # RUN conda update --all -y
-RUN conda create -n dev python=3.11 -y && conda init bash && \
+RUN conda create -n dev python={{ cookiecutter.python_version }} -y && conda init bash && \
   echo "conda activate dev" >> ~/.bashrc && source activate dev && \
   pip install cookiecutter ipykernel
 # conda install -y -c conda-forge 'cookiecutter>=2' ipykernel

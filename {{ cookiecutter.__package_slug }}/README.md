@@ -23,7 +23,7 @@ Here are some key points about this setup:
 **Step 1**. Enter to the root path of the repo and use or create a new conda environment for development:
 
 ```bash
-conda create -n dev python=3.11 -y && conda activate dev
+conda create -n dev python={{ cookiecutter.python_version }} -y && conda activate dev
 ```
 
 **Step 2**. Install all dependencies and the package in editor mode, initialize the repository, and perform quality assurance (pre-commit):
@@ -58,7 +58,7 @@ pre-commit install
 
 
 ```bash
-conda create -n {{ cookiecutter.__package_slug }} python=3.11 -y && conda activate {{ cookiecutter.__package_slug }}
+conda create -n {{ cookiecutter.__package_slug }} python={{ cookiecutter.python_version }} -y && conda activate {{ cookiecutter.__package_slug }}
 pip install dist/{{ cookiecutter.__package_slug }}-0.1.0-py3-none-any.whl
 ```
 
