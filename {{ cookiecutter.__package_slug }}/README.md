@@ -70,17 +70,15 @@ pip install dist/{{ cookiecutter.__package_slug }}-0.1.0-py3-none-any.whl
 
 Check out the contributing guidelines.
 
-### Before Committing
-
 Before committing your changes, run the following quality assurance checks:
 
-- **Manual pre-commit** - Complete set of checks (slow). The steps for this process can be found under the `make qa` label in the Makefile.
+- **Complete Manual pre-commit** - Complete set of checks (slow). The steps for this process can be found under the `make qa` label in the Makefile.
 
 ```bash
 make qa
 ```
 
-- **Manual pre-commit** - Reduced set of checks (fast). The steps for this process can be found under the `make qa-fast` label in the Makefile.
+- **Fast Manual pre-commit** - Reduced set of checks (fast). The steps for this process can be found under the `make qa-fast` label in the Makefile.
 
 ```bash
 make qa-fast
