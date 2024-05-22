@@ -1,6 +1,11 @@
 """
-# Pytest Parameters - Empty Template
-Angel Martinez-Tenor 2022
+- Title:            Pytest Parameters - Empty Template
+- Project/Topic:    Data Science Template
+- Author/s:         Angel Martinez-Tenor
+- Source:           https://github.com/angelmtenor/ds-template 
+- Dev Date:         2022
+
+- Status:           Template only
 """
 
 # import pytest

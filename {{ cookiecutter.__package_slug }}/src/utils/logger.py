@@ -1,6 +1,11 @@
 """
-Practical General Logger Module built upon logging module
-Angel Martinez-Tenor 2022-2023
+- Title:            Logger Module
+- Project/Topic:    Data Science Template
+- Author/s:         Angel Martinez-Tenor
+- Source:           https://github.com/angelmtenor/ds-template 
+- Dev Date:         2017-2024
+
+- Status:           Production Ready
 
 Example of high-level usage (caller module / notebook):
 

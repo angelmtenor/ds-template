@@ -1,5 +1,6 @@
 # Dev Container: DS Ubuntu 22. Includes miniconda, git and poetry
 # Angel Martinez-Tenor 2022-2024
+# https://github.com/angelmtenor/ds-template
 
 FROM ubuntu:22.04
 

@@ -1,5 +1,6 @@
 # Pre-commit settings / QA
-# Angel Martinez-Tenor. 2022-2024
+# Angel Martinez-Tenor 2022-2024
+# https://github.com/angelmtenor/ds-template
 
 # Instructions: https://pre-commit.com/
 # Manual QA: 'pre-commit run --all-files'

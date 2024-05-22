@@ -1,5 +1,6 @@
 # Git Commit Message Style Guide
 Angel Martinez-Tenor, 2018-2024
+https://github.com/angelmtenor/ds-template
 
 ## Message Structure
 - Type: Subject

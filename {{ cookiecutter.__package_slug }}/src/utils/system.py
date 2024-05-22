@@ -1,13 +1,11 @@
 """
-- Title:            Utils System. Essential system functions: Env variables, files and system info
-- Project/Topic:    Utils Tabular Data. Practical functions for Data Science
+- Title:            Utils System. Wrapper on top of Pandas for common OS/environment calls
+- Project/Topic:    Data Science Template
 - Author/s:         Angel Martinez-Tenor
-- Dev Date:         2017 - 2024
+- Source:           https://github.com/angelmtenor/ds-template 
+- Dev Date:         2017-2024
 
 - Status:           Production Ready
-
-- Acknowledgements. Partially Based on:
-    - Personal Repo: https://github.com/angelmtenor/data-science-keras/blob/master/helper_ds.py
 """
 
 from __future__ import annotations
