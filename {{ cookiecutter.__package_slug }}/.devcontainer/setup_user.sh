@@ -1,5 +1,5 @@
 #!/bin/bash
-# Angel Martinez Tenor 2023-2024
+# Angel Martinez-Tenor 2023-2024
 
 # This script is used for the initial setup required for new users on cloud or on-premises machines.
 # Note: This setup is already done in development containers.

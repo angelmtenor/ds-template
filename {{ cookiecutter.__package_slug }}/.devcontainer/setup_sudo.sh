@@ -1,5 +1,5 @@
 #!/bin/bash
-# Angel Martinez Tenor 2023-2024
+# Angel Martinez-Tenor 2023-2024
 
 # This script updates the system and installs essential packages required for the project.
 # It also provides an option to install GPU (NVIDIA/CUDA) support.

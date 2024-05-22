@@ -1,5 +1,5 @@
 # Git Commit Message Style Guide
-Angel Martinez Tenor, 2018-2024
+Angel Martinez-Tenor, 2018-2024
 
 ## Message Structure
 - Type: Subject

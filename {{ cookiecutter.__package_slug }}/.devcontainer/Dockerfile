@@ -1,5 +1,5 @@
 # Dev Container: DS Ubuntu 22. Includes miniconda, git and poetry
-# Angel Martinez Tenor 2022
+# Angel Martinez-Tenor 2022-2024
 
 FROM ubuntu:22.04
 
