@@ -21,7 +21,7 @@ DEFAULT_PORT = 8000
 DEFAULT_DEBUG = False
 
 # Get environment variables or use default values if not set
-PORT = int(os.getenv("PORT", DEFAULT_PORT))
+PORT = int(os.getenv("PORT", str(DEFAULT_PORT)))
 DEBUG = os.getenv("DEBUG", str(DEFAULT_DEBUG)).lower() == "true"
 
 # Set host and log level

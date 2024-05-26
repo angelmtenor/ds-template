@@ -1,8 +1,16 @@
-""" Python Package init file """
+"""
+- Title:            Main init file for the package
+- Project/Topic:    Data Science Template. Utils
+- Author/s:         Angel Martinez-Tenor
+- Source:           https://github.com/angelmtenor/ds-template
+- Dev Date:         2017-2024
+
+- Status:           Production Ready
+"""
 
 # read version from installed package
 from importlib.metadata import version
 
-from .utils import logger  # noqa: F401, pylint: disable=unused-import # must be placed before Assistant # isort: skip
+from .utils import logger  # noqa: F401, pylint: disable=unused-import, isort: skip
 
 __version__ = version("{{ cookiecutter.__package_slug }}")

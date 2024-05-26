@@ -30,7 +30,21 @@ if environment != "":
     environment = "/" + environment
 
 
+
 def validate_token(credentials: HTTPAuthorizationCredentials = Depends(bearer_scheme)):
+    """
+    Validates the token provided in the request.
+
+    Args:
+        credentials (HTTPAuthorizationCredentials): The credentials provided in the request.
+
+    Returns:
+        HTTPAuthorizationCredentials: The validated credentials.
+
+    Raises:
+        HTTPException: If the token is invalid or missing.
+    """
+
     if BEARER_TOKEN is None:
         if credentials.scheme != "Bearer":
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid or missing token")
