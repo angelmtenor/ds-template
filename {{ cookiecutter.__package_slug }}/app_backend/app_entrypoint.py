@@ -29,4 +29,4 @@ HOST = "0.0.0.0"
 LOG_LEVEL = "debug" if DEBUG else "info"
 
 if __name__ == "__main__":
-    uvicorn.run("app_assistant:app", host=HOST, port=PORT, reload=DEBUG, log_level=LOG_LEVEL)
+    uvicorn.run("app:app", host=HOST, port=PORT, reload=DEBUG, log_level=LOG_LEVEL)
