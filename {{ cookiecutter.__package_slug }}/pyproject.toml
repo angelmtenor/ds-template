@@ -53,15 +53,17 @@ notebook = ">=7"
 jupyter = ">=1.0.0"
 jupyter-contrib-nbextensions = ">=0.7.0"
 
+# API
+fastapi = ">=0.111"
+uvicorn = ">=0.29"
+
 # Plottting
 # plotly = ">=5.17.0"
 
 # Front Lite
 # streamlit = ">=1.27.2"
 
-# API
-# fastapi = ">=0.100.0"
-# uvicorn = ">=0.23.1"
+
 
 
 pytest-cov = ">=4.1"
