@@ -38,17 +38,13 @@ compress::
 	zip -r archive.zip . -x "*.git*" -x "*.mypy*" -x "*/scenarios/*" -x "*log/*"  -x "*/__pycache__/*" -x "*.pytest_cache/*" -x "*/log/*"
 
 build:
-	@echo "Building Package and Updating in all app directories"
+	@echo "Building Package and Updating in app backend"
 	poetry build
-	for dir in /app*; do \
-		if [ -d "$$dir" ]; then \
-			find dist -name "*.whl" -exec cp {} "$$dir" \; \
-		fi \
-	done
+	cp -f dist/*.whl app_backend/
 
 run-backend::
 	@echo "Running Backend App"
-	cd app_backend && python app_assistant_entrypoint.py
+	cd app_backend && python app_entrypoint.py
 
 run-backend-container::
 	@echo "Refer to app_backend/Makefile"
