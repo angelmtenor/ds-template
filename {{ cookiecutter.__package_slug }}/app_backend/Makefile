@@ -10,4 +10,4 @@ run:: # Setup Required
 run-container::  # Docker Required. No setup required
 	@echo "Running Backend Container"
 	docker build -t {{ cookiecutter.__package_slug }} .
-	docker run -d -p 8000:8000 docker run -d -p 8000:8000 {{ cookiecutter.__package_slug }}
+	docker run -p 8000:8000 {{ cookiecutter.__package_slug }}

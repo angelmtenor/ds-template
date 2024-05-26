@@ -5,6 +5,7 @@ FROM python:{{ cookiecutter.python_version }}-slim
 WORKDIR /app
 
 # Copy the requirements file into the container
+COPY *.whl .
 COPY requirements.txt .
 
 # Install the required packages
