@@ -2,7 +2,7 @@
 - Title:            Utils System. Wrapper on top of Pandas for common OS/environment calls
 - Project/Topic:    Data Science Template
 - Author/s:         Angel Martinez-Tenor
-- Source:           https://github.com/angelmtenor/ds-template 
+- Source:           https://github.com/angelmtenor/ds-template
 - Dev Date:         2017-2024
 
 - Status:           Production Ready

@@ -3,7 +3,7 @@
 [![python](https://img.shields.io/badge/python-%5E3.8-blue)]()
 
 This cookiecutter `ds-template` is a customized modification of  [py-pkgs-cookiecutter](https://github.com/py-pkgs/py-pkgs-cookiecutter) for data science projects, mainly adding the following features:
-- Development Container with pre-configured tools:Conda, Poetry and Git
+- Development Container with pre-configured tools: Conda, Poetry and Git
 - Makefile with commands for installation, testing, qa, etc.
 - Complete pre-commit yaml for code formatting and qa
 

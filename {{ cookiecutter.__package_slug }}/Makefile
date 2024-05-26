@@ -37,5 +37,21 @@ get-features::
 compress::
 	zip -r archive.zip . -x "*.git*" -x "*.mypy*" -x "*/scenarios/*" -x "*log/*"  -x "*/__pycache__/*" -x "*.pytest_cache/*" -x "*/log/*"
 
+build:
+	@echo "Building Package and Updating in all app directories"
+	poetry build
+	for dir in /app*; do \
+		if [ -d "$$dir" ]; then \
+			find dist -name "*.whl" -exec cp {} "$$dir" \; \
+		fi \
+	done
+
+run-backend::
+	@echo "Running Backend App"
+	cd app_backend && python app_assistant_entrypoint.py
+
+run-backend-container::
+	@echo "Refer to app_backend/Makefile"
+
 # profile::
 # 	python -m cProfile -o ./profile/output.pstats my_script.py && snakeviz ./profile/output.pstats

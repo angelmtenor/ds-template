@@ -1,0 +1,2 @@
+./{{ cookiecutter.__package_slug }}-0.1.0-py3-none-any.whl
+uvicorn
