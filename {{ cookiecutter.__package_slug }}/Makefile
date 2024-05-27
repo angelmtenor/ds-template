@@ -46,8 +46,10 @@ run-backend::
 	@echo "Running Backend App"
 	cd app_backend && python app_entrypoint.py
 
-run-backend-container::
-	@echo "Refer to app_backend/Makefile"
+run-backend-container:: build
+	@echo "Running Backend Container"
+	docker build -t {{ cookiecutter.__package_slug }} .
+	docker run -p 8000:8000 {{ cookiecutter.__package_slug }}
 
 # profile::
 # 	python -m cProfile -o ./profile/output.pstats my_script.py && snakeviz ./profile/output.pstats
