@@ -19,7 +19,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
     # GPU-ONLY
     sudo apt-get install nvtop ubuntu-drivers-common -y
-    sudo apt-get install nvidia-kernel-common-535 -y
+    sudo apt-get install nvidia-kernel-common-555 -y
     sudo apt install nvidia-cuda-toolkit -y
     echo "Rebooting for changes to take effect..."
     sudo reboot
