@@ -8,9 +8,11 @@
 - Status:           Production Ready
 """
 
-# read version from installed package
+# pylint: disable=unused-import
+# isort: skip
+
 from importlib.metadata import version
 
-from .utils import logger  # noqa: F401, pylint: disable=unused-import, isort: skip
+from .utils import logger  # noqa: F401
 
 __version__ = version("{{ cookiecutter.__package_slug }}")

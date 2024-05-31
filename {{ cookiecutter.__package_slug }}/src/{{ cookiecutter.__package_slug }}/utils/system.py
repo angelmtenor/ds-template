@@ -18,7 +18,7 @@ import time
 from pathlib import Path
 
 import cpuinfo  # pip py-cpuinfo
-import pkg_resources
+import pkg_resources # type: ignore
 import psutil
 from dotenv import dotenv_values, find_dotenv, load_dotenv
 
@@ -29,7 +29,7 @@ log = logger.get_logger(__name__)
 INSTALLED_PACKAGES = pkg_resources.working_set
 installed_packages_dict = {i.key: i.version for i in INSTALLED_PACKAGES}  # pylint: disable=not-an-iterable
 
-DEFAULT_MODULES = []
+DEFAULT_MODULES: list[str] | tuple[str] = []
 
 # Env Variables
 

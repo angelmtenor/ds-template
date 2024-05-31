@@ -30,7 +30,6 @@ if environment != "":
     environment = "/" + environment
 
 
-
 def validate_token(credentials: HTTPAuthorizationCredentials = Depends(bearer_scheme)):
     """
     Validates the token provided in the request.
