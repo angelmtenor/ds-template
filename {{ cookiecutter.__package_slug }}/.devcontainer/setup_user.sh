@@ -42,23 +42,22 @@ if [[ ! -d $MINICONDA_DIR ]]; then
 fi
 
 # Install Poetry
-if [[ ! -d $POETRY_PATH ]]; then
-  curl -sSL https://install.python-poetry.org | python3 -
-  echo 'export PATH="/home/'$USER'/.local/bin:$PATH"' >> ~/.bashrc
-  source ~/.bashrc
-fi
+pipx install poetry
+# Install Cookiecutter
+pipx install cookiecutter
+pipx ensurepath
 
 # Setup Git (already installed by admin): Change default branch to main
 git config --global init.defaultBranch main
 
-# Create custom DEV and TEST environments
+# Create conda dev env
 $MINICONDA_PATH update --all -y
 
-# Dev environment with cookiecutter and ipykernel. Can be used with poetry, pip...
+# Dev environment with ipykernel. Can be used with poetry, pip...
 if [[ ! $($MINICONDA_PATH env list | grep '^dev\s') ]]; then
   $MINICONDA_PATH create -n dev python=3.12 -y && $MINICONDA_PATH init bash && \
   echo "conda activate dev" >> ~/.bashrc && source activate dev && \
-  pip install cookiecutter ipykernel
+  pip install ipykernel
   echo "Environment dev created"
 fi
 
