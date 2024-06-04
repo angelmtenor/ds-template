@@ -13,7 +13,7 @@
             ]
         }
     },
-    "name": "DS Ubuntu 22",
+    "name": "DS Ubuntu 24",
     "remoteUser": "user",
     "runArgs": [
         "--gpus",

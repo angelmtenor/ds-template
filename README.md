@@ -1,6 +1,6 @@
 # Generic Template for Data Science Projects based on py-pkgs
 
-[![python](https://img.shields.io/badge/python-%5E3.8-blue)]()
+[![python](https://img.shields.io/badge/python-%5E3.12-blue)]()
 
 This cookiecutter `ds-template` is a customized modification of  [py-pkgs-cookiecutter](https://github.com/py-pkgs/py-pkgs-cookiecutter) for data science projects, mainly adding the following features:
 - Development Container with pre-configured tools: Conda, Poetry and Git
@@ -20,7 +20,7 @@ Please refer to the [documentation](https://py-pkgs-cookiecutter.readthedocs.io/
     pip install cookiecutter
     ```
 
-2. Generate a Python package structure using [`cookiecutter-ds-generic`](https://github.com/angelmtenor/ds_template.git):
+2. Generate a Python package structure:
 
     ```bash
     cookiecutter https://github.com/angelmtenor/ds_template.git
