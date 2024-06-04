@@ -17,6 +17,4 @@ conda update -n base -c defaults conda
 source activate dev
 
 # Update Poetry
-curl -sSL https://install.python-poetry.org | python3 -
-# echo 'export PATH="/home/'$USER'/.local/bin:$PATH"' >> ~/.bashrc
-source ~/.bashrc
+pipx upgrade poetry
