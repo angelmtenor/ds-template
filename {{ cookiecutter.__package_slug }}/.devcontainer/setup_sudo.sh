@@ -7,6 +7,13 @@
 
 # Recommended OS: Ubuntu 24.04 LTS or above
 
+# INSTRUCTIONS:
+# Step 1: Enable execution of the script with the following command:
+# chmod +x setup_sudo.sh
+# Step 2: Execute the script with the following command:
+# sudo ./setup_sudo.sh
+
+
 # Ensure the script is being run with superuser privileges
 if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root" 

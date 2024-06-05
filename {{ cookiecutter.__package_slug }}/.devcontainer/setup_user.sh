@@ -25,7 +25,6 @@ set -u
 # Variables
 MINICONDA_DIR=~/miniconda3
 MINICONDA_PATH=$MINICONDA_DIR/bin/conda
-POETRY_PATH=~/.local/bin
 
 # Check if curl, python3, git, and pip are installed
 command -v curl python3 git pip >/dev/null 2>&1 || { echo >&2 "I require curl, python3, git, and pip but they're not installed.  Aborting."; exit 1; }
