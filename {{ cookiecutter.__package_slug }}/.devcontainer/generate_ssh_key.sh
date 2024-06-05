@@ -18,6 +18,9 @@ if [[ $generate_ssh_key =~ ^[Yy]$ ]]; then
   # Ask for the hostname
   read -p "Enter the hostname: " hostname
 
+  # Get the username of the user executing the script
+  username=$(whoami)
+
   # Switch to the new user and generate the SSH key, copy the public key to authorized_keys, add the server to the SSH config, and set the permissions
   cd ~
   ssh-keygen -t ed25519 -f ~/.ssh/$label -q -N ''
